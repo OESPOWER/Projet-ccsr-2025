@@ -1,0 +1,88 @@
+# Architecture du Projet
+
+## Diagramme de l'Architecture
+
+
+             +-------------+
+             |  Publisher  |
+             +------^------+
+                    |
+                    v
+             +-------------+
+             |   Kafka     |
+             |   Broker    |
+             +------^------+
+                    |
+                    v
+             +-------------+
+             | Zookeeper   |
+             +-------------+
+                    |
+                    v
+             +-------------+
+             |  Subscriber |
+             +------^------+
+                    |
+                    v
+       +------------------------+
+       |     Google Search      |
+       |   & Email Services     |
+       +------------------------+
+Composants
+Publisher :
+
+Rôle : Publie des alertes avec des mots-clés associés dans le système Kafka.
+
+Technologie : Utilise l'API Kafka Producer en Java.
+
+Fonctionnalités :
+
+Publier des messages contenant des alertes et des mots-clés.
+
+Kafka Broker :
+
+Rôle : Agit comme un intermédiaire pour la transmission de messages entre les publishers et les subscribers.
+
+Technologie : Apache Kafka.
+
+Fonctionnalités :
+
+Stocker et transmettre les messages.
+
+Assurer la tolérance aux pannes avec un cluster de brokers.
+
+Zookeeper :
+
+Rôle : Coordonne les brokers Kafka et stocke les métadonnées.
+
+Technologie : Apache Zookeeper.
+
+Fonctionnalités :
+
+Gérer la configuration et la synchronisation des brokers Kafka.
+
+Subscriber :
+
+Rôle : Reçoit les alertes publiées et les traite en fonction des mots-clés des abonnés.
+
+Technologie : Utilise l'API Kafka Consumer en Java.
+
+Fonctionnalités :
+
+Recevoir et traiter les messages.
+
+Filtrer les messages en fonction des mots-clés des abonnés.
+
+Envoyer des emails aux abonnés avec les alertes pertinentes.
+
+Google Search & Email Services :
+
+Rôle : Recherche les mots-clés sur Google et envoie les résultats par email aux abonnés.
+
+Technologie : Utilise l'API Google Search et l'API JavaMail.
+
+Fonctionnalités :
+
+Effectuer des recherches Google pour les mots-clés des alertes.
+
+Envoyer des emails avec les résultats de recherche et les alertes aux abonnés.

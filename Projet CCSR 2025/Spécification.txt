@@ -1,0 +1,22 @@
+# Spécification du Projet
+
+## Objectif
+Développer une solution Java d’un système de médiation de contenu similaire à Google Alerts, utilisant Apache Kafka et Apache Zookeeper.
+
+## Fonctionnalités
+- Inscription des utilisateurs avec des mots-clés.
+- Publication d'alertes avec des mots-clés associés.
+- Abonnement aux alertes en fonction des mots-clés.
+- Envoi d'emails avec les alertes et résultats de recherche Google.
+- Gestion de la fréquence des alertes (immédiate, quotidienne, hebdomadaire).
+
+## Contraintes
+- Utilisation de Kafka et Zookeeper pour la tolérance aux pannes.
+- Développement en Java compatible avec la version la plus récente.
+- Hébergement du projet sur GitHub.
+
+## Livrables
+- Spécification
+- Architecture
+- Code source Java
+- Résultat de démonstration
